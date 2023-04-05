@@ -1,4 +1,5 @@
-Description
+#Description
+
 This is a submission for my homework for week 9.
 
 This is a weather app that allows a user look up a 5 day weather forcast for any city around the world.
@@ -20,4 +21,4 @@ The starter code for this assesment. Previous git pusheshes with modified code. 
 
 Github URL: https: https://github.com/aevripidou1996/weather-app
 
-Live Application URL: https:file:///C:/Users/61434/Desktop/projects/weather-app/index.html
+Live Application URL: https://aevripidou1996.github.io/weather-app/
