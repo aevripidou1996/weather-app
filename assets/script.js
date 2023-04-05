@@ -234,3 +234,57 @@ function colourUVIndex(currentWeatherData) {
 }
 
 
+//array of months to use for date conversion
+const monthsArray = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  
+  //array of days to use for date conversion
+  const daysArray = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday",
+  ];
+  
+  //convert the date from unix format to a readable format
+  function getDate(weatherData) {
+    const rawDate = new Date(weatherData.dt * 1000);
+    const currentDayAsIndex = rawDate.getDay();
+    const currentDayValue = daysArray[currentDayAsIndex];
+    const currentDateValue = rawDate.getDate();
+    const currentMonthAsIndex = rawDate.getMonth();
+    const currentMonthValue = monthsArray[currentMonthAsIndex];
+    const currentYear = rawDate.getFullYear();
+    const convertedDate =
+      `${currentDayValue}, ` +
+      `${currentDateValue} ` +
+      `${currentMonthValue} ` +
+      `${currentYear}`;
+    return convertedDate;
+  }
+  
+  //display the weather icons on the page
+  function getIcons(weatherData) {
+    for (let i = 0; i < 6; i++) {
+      weatherIcon = weatherData[i].weather[0].icon;
+      iconElement = document.querySelector(`#icon-${i}`);
+      iconElement.src =
+        "http://openweathermap.org/img/wn/" + weatherIcon + "@2x.png";
+    }
+  }
